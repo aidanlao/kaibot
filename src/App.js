@@ -6,14 +6,19 @@ import  { useState } from 'react';
 import useSound from 'use-sound';
 import click from './click.mp3';
 import CallNurse from './views/callNurse';
+import ring from './ring.mp3';
 function App() {
   const [play] = useSound(click);
+  const [phone, {stop}] = useSound(ring);
   const [page, setPage] = useState(0);
   function next() {
     setPage(page+1);
     play();
   }
-
+  function restart() {
+    setPage(0);
+    stop();
+  }
   const viewList = [
     <Welcome next={next}/>,
     <Purpose next={next}/>,
@@ -22,8 +27,8 @@ function App() {
 
   return (
     <>
-    <div className="restart"><a onClick={()=>{setPage(0)}}href="#">Restart</a></div>
-    <div className="callNurse"><a onClick={()=>{setPage(2)}}>Call Nurse</a></div>
+    <div className="restart"><a onClick={()=>{restart()}}href="#">Restart</a></div>
+    <div className="callNurse"><a onClick={()=>{setPage(2); phone();}}>Call Nurse</a></div>
     {viewList[page]}
     </>
   );
