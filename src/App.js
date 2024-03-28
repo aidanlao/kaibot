@@ -10,6 +10,7 @@ import ring from './ring.mp3';
 import BMI from './views/bmi';
 import Symptoms from './views/symptoms';
 function App() {
+  
   const [play] = useSound(click);
   const [phone, {stop}] = useSound(ring);
   const [page, setPage] = useState(4);

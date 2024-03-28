@@ -1,9 +1,28 @@
 import { useState } from "react";
-
+import OpenAI from "openai";
 export default function Symptoms() {
-    const [symptoms, setSymptoms] = useState();
-    function handleSubmit() {
+
+    const openai = new OpenAI({
+        apiKey: process.env.REACT_APP_API_KEY,
+        dangerouslyAllowBrowser: true,
+    });
+
+    async function main() {
+        const prompt = "Given the following symptoms, can you come up with potential diagnosis and a summary of each? \n"
         
+        const completion = await openai.chat.completions.create({
+            messages: [{ role: "system", content: prompt + symptoms }],
+            model: "gpt-3.5-turbo",
+          });
+        
+          console.log(completion.choices[0]);
+          setResult(completion.choices[0].message.content);
+    }
+    const [result, setResult] = useState();
+    const [symptoms, setSymptoms] = useState();
+    function handleSubmit(e) {
+        e.preventDefault();
+        main();
     }
     return (
       <>
@@ -14,6 +33,11 @@ export default function Symptoms() {
             <input type="submit" className="submit" value="Submit"></input>
             </form>
            </div>  
+           {result && (
+            <>
+                <p>{result}</p>
+            </>
+           )}
       </>  
     );
 }
