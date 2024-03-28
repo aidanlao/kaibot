@@ -20,6 +20,8 @@ export default function BMI({ next }) {
         const weight = formObject.weight;
         const height = formObject.height;
         const BMI = calculate(weight, height);
+
+        success();
         setBmi(BMI);
     }
     return (
