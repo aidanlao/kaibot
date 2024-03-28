@@ -147,3 +147,19 @@ flex-direction: column;
 text-align: center;
 gap: 1em;
 }
+.symptoms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  height: 100vh;
+  gap: 2em;
+}
+.symptoms textarea{
+  padding: 1em;
+  min-height: 10em;
+  border-radius: 1em;
+  max-width: 30em;
+  width: 100%;
+}

@@ -8,10 +8,11 @@ import click from './click.mp3';
 import CallNurse from './views/callNurse';
 import ring from './ring.mp3';
 import BMI from './views/bmi';
+import Symptoms from './views/symptoms';
 function App() {
   const [play] = useSound(click);
   const [phone, {stop}] = useSound(ring);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(4);
   function next() {
     setPage(page+1);
     play();
@@ -25,7 +26,8 @@ function App() {
     <CallNurse/>,
     <Welcome next={next}/>,
     <Purpose next={next}/>,
-    <BMI next={next}/>
+    <BMI next={next}/>,
+    <Symptoms next={next}/>
   ]
 
   return (
