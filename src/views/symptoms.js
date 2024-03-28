@@ -6,7 +6,6 @@ export default function Symptoms() {
         apiKey: key,
         dangerouslyAllowBrowser: true,
     });
-    console.log(process.env.REACT_APP_API_KEY);
     async function main() {
         const prompt = "Given the following symptoms, can you come up with potential diagnosis and a summary of each? \n"
         
