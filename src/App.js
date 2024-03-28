@@ -33,8 +33,8 @@ function App() {
 
   return (
     <>
-    <div className="restart"><a onClick={()=>{restart()}}href="#">Restart</a></div>
-    <div className="callNurse"><a onClick={()=>{setPage(0); phone();}}>Call Nurse</a></div>
+    <div className="restart"><button onClick={()=>{restart()}}href="#">Restart</button></div>
+    <div className="callNurse"><button onClick={()=>{setPage(0); phone();}}>Call Nurse</button></div>
     {viewList[page]}
     </>
   );
