@@ -142,10 +142,10 @@ body {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.bmi .results button {
+.bmi .bmiresults button {
   padding: 0.8em 7em;
 }
-.bmi .results {
+.bmi .bmiresults {
 display: flex;
 justify-content: center;
 align-items: center;

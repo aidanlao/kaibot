@@ -37,7 +37,7 @@ export default function BMI({ next }) {
                     <input className="submit" type="submit" value="Submit" />
                 </form>
                 { bmi && (
-                <div className="results">
+                <div className="bmiresults">
                     <h1>Your BMI is: {bmi}!</h1>
                     <button className="next" onClick={() => {next()}}>Next</button>
                 </div>
