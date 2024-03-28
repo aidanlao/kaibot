@@ -93,7 +93,9 @@ body {
   bottom: 1em;
   color: white;
 }
-.callNurse button {
+.callNurse button, .restart button {
+  color: white;
+  border: none;
   transition: 0.5s;
   padding: 0.5em 1em;
   border-radius: 1em;
