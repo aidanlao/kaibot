@@ -15,7 +15,7 @@ function App() {
   const [play] = useSound(click);
   const [diag, setDiag] = useState("No diagnosis given.");
   const [phone, {stop}] = useSound(ring);
-  const [page, setPage] = useState(6);
+  const [page, setPage] = useState(1);
   function next() {
     setPage(page+1);
     play();
