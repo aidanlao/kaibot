@@ -69,6 +69,7 @@ body {
   backdrop-filter: brightness(0.7) contrast(0.9);
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100vh;
 }
 
 .restart {
@@ -95,10 +96,54 @@ body {
   border-radius: 1em;
   background-color: rgb(11, 112, 195);
 }
+.next, .submit {
+  transition: 0.5s;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  background-color: rgb(11, 112, 195);
+}
+.next:hover, .submit:hover {
+  cursor: pointer;
+  background-color: var(--blue);
+}
 .nurse.page i {
   color: white;
 }
 .callNurse a:hover {
   cursor: pointer;
   background-color: var(--blue);
+}
+.bmi {
+  color: white;
+  gap: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+.bmi form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+.bmi input {
+  padding: 0.8em 0.5em;
+  border-radius: 1em;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.bmi .results button {
+  padding: 0.8em 7em;
+}
+.bmi .results {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+gap: 1em;
 }
