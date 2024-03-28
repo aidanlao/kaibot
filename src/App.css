@@ -189,4 +189,10 @@ gap: 1em;
   flex-direction: column;
   gap: 1em;
   height: 100vh;
+  max-width: 50em;
+}
+.resultsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

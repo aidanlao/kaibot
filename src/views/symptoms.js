@@ -6,16 +6,17 @@ export default function Symptoms({ next, setDiag }) {
         apiKey: key,
         dangerouslyAllowBrowser: true,
     });
+    const [loading, setLoading] = useState();
     async function main() {
         const prompt = "Given the following symptoms, can you come up with potential diagnosis and a summary of each? \n"
-        
+        setLoading(true);
         const completion = await openai.chat.completions.create({
             messages: [{ role: "system", content: prompt + symptoms }],
             model: "gpt-3.5-turbo",
           });
           
           const results = completion.choices[0].message.content;
-
+          setLoading(false);
           setDiag(results);
           next();
     }
@@ -32,6 +33,9 @@ export default function Symptoms({ next, setDiag }) {
             <textarea value={symptoms} onChange={(e)=> {setSymptoms(e.target.value);}}></textarea>
             <input type="submit" className="submit" value="Submit"></input>
             </form>
+            { loading && (
+                loading ? (<p>Loading...</p>) : (<p>Done loading</p>)
+            )}
            </div>  
       </>  
     );
