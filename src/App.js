@@ -1,27 +1,24 @@
 
 import './App.css';
-
+import Purpose from './views/purpose';
+import Welcome from './views/welcome';
+import  { useState } from 'react';
 function App() {
+  const [page, setPage] = useState(0);
+  function next() {
+    setPage(page+1);
+  }
+
+  const viewList = [
+    <Welcome next={next}/>,
+    <Purpose next={next}/>
+  ]
+
   return (
-    <div className="homepage">
-      <div className="homepageContent">
-        <h1>Welcome, My name is Kai! <br></br> Who is this visit for?</h1>
-        <div className="buttons">
-          <div className="button">
-          <i class="fa-solid fa-user fa-2xl"></i>
-          <h2>Myself</h2>
-          </div>
-          <div className="button">
-          <i class="fa-solid fa-children fa-2xl"></i>
-          <h2>Dependent</h2>
-          </div>
-          <div className="button">
-          <i class="fa-solid fa-arrow-right fa-2xl"></i>
-          <h2>Other</h2>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+    <div className="restart"><a onClick={()=>{setPage(0)}}href="#">Restart</a></div>
+    {viewList[page]}
+    </>
   );
 }
 
