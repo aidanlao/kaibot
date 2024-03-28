@@ -9,10 +9,13 @@ import CallNurse from './views/callNurse';
 import ring from './ring.mp3';
 import BMI from './views/bmi';
 import Symptoms from './views/symptoms';
+import Result from './views/results';
+import Ready from './views/ready';
 function App() {
   const [play] = useSound(click);
+  const [diag, setDiag] = useState("No diagnosis given.");
   const [phone, {stop}] = useSound(ring);
-  const [page, setPage] = useState(4);
+  const [page, setPage] = useState(6);
   function next() {
     setPage(page+1);
     play();
@@ -27,7 +30,9 @@ function App() {
     <Welcome next={next}/>,
     <Purpose next={next}/>,
     <BMI next={next}/>,
-    <Symptoms next={next}/>
+    <Symptoms next={next} setDiag={setDiag}/>,
+    <Result next={next}  diag={diag} />,
+    <Ready />
   ]
 
   return (

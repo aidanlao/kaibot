@@ -1,6 +1,6 @@
 import { useState } from "react";
 import OpenAI from "openai";
-export default function Symptoms() {
+export default function Symptoms({ next, setDiag }) {
     const key = process.env.REACT_APP_API_KEY;
     const openai = new OpenAI({
         apiKey: key,
@@ -13,11 +13,12 @@ export default function Symptoms() {
             messages: [{ role: "system", content: prompt + symptoms }],
             model: "gpt-3.5-turbo",
           });
-        
-          console.log(completion.choices[0]);
-          setResult(completion.choices[0].message.content);
+          
+          const results = completion.choices[0].message.content;
+
+          setDiag(results);
+          next();
     }
-    const [result, setResult] = useState();
     const [symptoms, setSymptoms] = useState();
     function handleSubmit(e) {
         e.preventDefault();
@@ -32,11 +33,6 @@ export default function Symptoms() {
             <input type="submit" className="submit" value="Submit"></input>
             </form>
            </div>  
-           {result && (
-            <>
-                <p>{result}</p>
-            </>
-           )}
       </>  
     );
 }

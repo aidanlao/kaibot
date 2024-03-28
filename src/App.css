@@ -109,7 +109,7 @@ body {
   border-radius: 1em;
   background-color: rgb(11, 112, 195);
 }
-.next:hover, .submit:hover {
+.next:hover, .submit:hover, .callNurse button:hover, .restart button:hover {
   cursor: pointer;
   background-color: var(--blue);
 }
@@ -178,4 +178,14 @@ gap: 1em;
 }
 .symptoms .submit {
   padding: 0.8em 5em;
+}
+.results {
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  flex-direction: column;
+  gap: 1em;
+  height: 100vh;
 }

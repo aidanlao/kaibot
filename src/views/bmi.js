@@ -3,7 +3,7 @@ import useSound from "use-sound";
 import successmp3 from "../success.mp3";
 export default function BMI({ next }) {
     const [success] = useSound(successmp3);
-    const [data, setData] = useState({});
+    const [data, setData] = useState({ weight: "", height: ""});
     const [bmi, setBmi] = useState();
     function calculate(lbs, inches) {
         const BMI = Math.round(((703*(lbs))/(Math.pow(inches,2)))*10) / 10;
