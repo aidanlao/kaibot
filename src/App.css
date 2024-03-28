@@ -15,7 +15,7 @@ a {
   text-decoration: none;
   color: unset;
 }
-.page h1 {
+.page h1, h1 {
   font-size: 2em;
   color: white;
   text-align: center;
