@@ -1,5 +1,7 @@
-# Getting Started with Create React App
+# Kai Bot
 
+A healthcare robot helper that simplifies the medical diagnostic process for patients that are checking into an appointment. 
+Through allowing patients to conduct the intake form through a robot, it saves administrative time and allows hospitals to deal with the higher patient intake.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
