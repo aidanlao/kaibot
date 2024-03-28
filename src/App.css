@@ -82,3 +82,23 @@ body {
   color: #efefef;
 
 }
+
+.callNurse {
+  position: fixed; 
+  right: 1em;
+  bottom: 1em;
+  color: white;
+}
+.callNurse a {
+  transition: 0.5s;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  background-color: rgb(11, 112, 195);
+}
+.nurse.page i {
+  color: white;
+}
+.callNurse a:hover {
+  cursor: pointer;
+  background-color: var(--blue);
+}
