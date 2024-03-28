@@ -82,7 +82,7 @@ body {
   color: white;
   transition: 0.5s;
 }
-.restart a:hover {
+.restart button:hover {
   color: #efefef;
 
 }
@@ -93,7 +93,7 @@ body {
   bottom: 1em;
   color: white;
 }
-.callNurse a {
+.callNurse button {
   transition: 0.5s;
   padding: 0.5em 1em;
   border-radius: 1em;
