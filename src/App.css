@@ -156,10 +156,21 @@ gap: 1em;
   height: 100vh;
   gap: 2em;
 }
+.symptoms form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 1em;
+}
 .symptoms textarea{
   padding: 1em;
   min-height: 10em;
   border-radius: 1em;
   max-width: 30em;
   width: 100%;
+}
+.symptoms .submit {
+  padding: 0.8em 5em;
 }
