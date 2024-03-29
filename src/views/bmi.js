@@ -31,9 +31,9 @@ export default function BMI({ next }) {
                 <h1>Let's calculate your BMI!</h1>
                 <form onSubmit={(e)=> handleSubmit(e)}>
                     <p>Weight (in lbs)</p>
-                    <input type="text" name="weight" value={data.weight} onChange={(e) => {handleChange(e)}}/>
+                    <input type="text" autocomplete="off" name="weight" value={data.weight} onChange={(e) => {handleChange(e)}}/>
                     <p>Height (in inches)</p>
-                    <input type="text" name="height" value={data.height} onChange={(e) => {handleChange(e)}}/>
+                    <input type="text"  autocomplete="off" name="height" value={data.height} onChange={(e) => {handleChange(e)}}/>
                     <input className="submit" type="submit" value="Submit" />
                 </form>
                 { bmi && (
