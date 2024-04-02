@@ -36,7 +36,7 @@ export default function BMI({ next }) {
                     <input type="text"  autoComplete="off" name="height" value={data.height} onChange={(e) => {handleChange(e)}}/>
                     <input className="submit" type="submit" value="Submit" />
                 </form>
-                { bmi && (
+                { bmi!=null && (
                 <div className="bmiresults">
                     <h1>Your BMI is: {bmi}!</h1>
                     <button className="next" onClick={() => {next()}}>Next</button>
